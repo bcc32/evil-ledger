@@ -42,8 +42,13 @@
 
 (defcustom evil-ledger-sort-key nil
   "When non-nil, specifies the keybinding in `evil-visual-state'
-for `evil-ledger-sort'."
-  :type 'str
+for `evil-ledger-sort'.
+
+This variable must be set before `evil-ledger-mode' is first
+called."
+  :type '(choice
+          (const :tag "Do not add a key binding" nil)
+          key)
   :group 'evil-ledger)
 
 ;;;; Motions
